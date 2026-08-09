@@ -1,0 +1,203 @@
+CAMPUS TRACK - STUDENT RESULT MANAGEMENT SYSTEM
+
+START
+
+Create Scanner object
+
+Display CampusTrack welcome heading
+
+Read Student ID
+
+Read complete Student Name using nextLine()
+
+Read Age
+
+WHILE Age is less than 16 OR Age is greater than 30
+Display "Invalid age. Enter a value between 16 and 30."
+Read Age again
+END WHILE
+
+Display Course Menu
+
+Read Course Choice
+
+WHILE Course Choice is less than 1 OR Course Choice is greater than 3
+Display "Invalid course choice. Enter a value from 1 to 3."
+Read Course Choice again
+END WHILE
+
+Use SWITCH on Course Choice
+
+CASE 1:
+    Course = "BCA"
+    Semester Fee = 30000
+    BREAK
+
+CASE 2:
+    Course = "B.Sc Computer Science"
+    Semester Fee = 35000
+    BREAK
+
+CASE 3:
+    Course = "B.E/B.Tech"
+    Semester Fee = 50000
+    BREAK
+
+END SWITCH
+
+Read Java Marks
+
+WHILE Java Marks is less than 0 OR Java Marks is greater than 100
+Display "Invalid marks. Enter a value between 0 and 100."
+Read Java Marks again
+END WHILE
+
+Read SQL Marks
+
+WHILE SQL Marks is less than 0 OR SQL Marks is greater than 100
+Display "Invalid marks. Enter a value between 0 and 100."
+Read SQL Marks again
+END WHILE
+
+Read Aptitude Marks
+
+WHILE Aptitude Marks is less than 0 OR Aptitude Marks is greater than 100
+Display "Invalid marks. Enter a value between 0 and 100."
+Read Aptitude Marks again
+END WHILE
+
+Calculate Total Marks
+
+Total Marks = Java Marks + SQL Marks + Aptitude Marks
+
+Calculate Average
+
+Average = Total Marks / 3.0
+
+Check Academic Result
+
+IF Java Marks >= 35 AND SQL Marks >= 35 AND Aptitude Marks >= 35
+Academic Result = "PASSED"
+ELSE
+Academic Result = "FAILED"
+END IF
+
+Determine Grade
+
+IF Academic Result is "FAILED"
+Grade = "F"
+ELSE IF Average >= 75
+Grade = "A"
+ELSE IF Average >= 60
+Grade = "B"
+ELSE IF Average >= 50
+Grade = "C"
+ELSE
+Grade = "D"
+END IF
+
+Read Attendance Percentage
+
+WHILE Attendance is less than 0 OR Attendance is greater than 100
+Display "Invalid attendance. Enter a value between 0 and 100."
+Read Attendance again
+END WHILE
+
+IF Attendance >= 75
+Attendance Status = "SUFFICIENT"
+ELSE
+Attendance Status = "SHORTAGE"
+END IF
+
+Read Fee Paid
+
+WHILE Fee Paid is less than 0 OR Fee Paid is greater than Semester Fee
+Display "Invalid fee amount."
+Read Fee Paid again
+END WHILE
+
+Calculate Fee Balance
+
+Fee Balance = Semester Fee - Fee Paid
+
+IF Fee Balance == 0
+Fee Status = "CLEARED"
+ELSE
+Fee Status = "PENDING"
+END IF
+
+Determine Final Semester Status
+
+IF Academic Result is "PASSED" AND Attendance >= 75 AND Fee Balance == 0
+Semester Status = "SEMESTER CLEARED"
+ELSE
+Semester Status = "SEMESTER NOT CLEARED"
+END IF
+
+Display Student Semester Report
+
+Display Student ID
+
+Display Student Name
+
+Display Age
+
+Display Course
+
+Display Java Marks
+
+Display SQL Marks
+
+Display Aptitude Marks
+
+Display Total Marks
+
+Display Average
+
+Display Academic Result
+
+Display Grade
+
+Display Attendance
+
+Display Attendance Status
+
+Display Semester Fee
+
+Display Fee Paid
+
+Display Fee Balance
+
+Display Fee Status
+
+Display Semester Status
+
+IF Semester Status is "SEMESTER NOT CLEARED"
+
+Display "Reasons:"
+
+IF Java Marks < 35
+    Display "- Java marks are below 35."
+END IF
+
+IF SQL Marks < 35
+    Display "- SQL marks are below 35."
+END IF
+
+IF Aptitude Marks < 35
+    Display "- Aptitude marks are below 35."
+END IF
+
+IF Attendance < 75
+    Display "- Attendance is below 75%."
+END IF
+
+IF Fee Balance > 0
+    Display "- Semester fee is pending."
+END IF
+
+END IF
+
+Display closing line
+
+STOP
