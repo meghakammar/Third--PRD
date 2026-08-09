@@ -1,520 +1,438 @@
-Third PRD — CampusTrack: Student Academic Management System
-1. Project Title
+Third PRD — CampusTrack: Student Result Management System
+Project Overview
 
-CampusTrack — Student Academic Management System
+CampusTrack is a beginner-friendly Java console application designed to manage the academic result, attendance, and semester fee status of one student.
 
-CampusTrack is a beginner-level Java console application that collects student academic information and generates a semester report.
+The application accepts student details, course selection, marks for three subjects, attendance percentage, and fee payment. It validates the input, calculates the academic result, assigns a grade, checks attendance and fee status, and finally displays a complete semester report.
 
-The application checks:
+Project Details
+Project Type: Individual Java Console Application
+Repository Name: Third-PRD
+Difficulty: Beginner
+Programming Language: Java
+Input: Runtime input using Scanner
+Students Handled: One student per execution
+Database: Not used
+Features
 
-Student details
-Course and semester
-Subject marks
-Academic result
-Attendance
-Assignment performance
-Scholarship eligibility
-Semester fee payment
-Final semester clearance
+The CampusTrack application performs the following tasks:
 
-The program uses runtime input through Scanner.
-
-2. Problem Statement
-
-A college needs to check the academic progress of students before allowing them to continue to the next semester.
-
-The CampusTrack application collects student information, marks, attendance, assignment scores and fee payment details.
-
-The program validates the entered values, calculates the required results and displays whether the student is cleared for the next semester.
-
-If the student is not cleared, the program displays the failed conditions and recommendations for improvement.
-
-3. Features
-Accept student details using Scanner.
-Select a course using a menu.
-Validate student age.
-Validate semester.
-Validate subject marks.
-Calculate total marks.
-Calculate percentage.
-Check individual subject pass marks.
-Calculate academic result and grade.
-Calculate attendance percentage.
-Check attendance status.
-Process assignment scores.
-Use break for early assignment completion.
-Use continue for invalid assignment scores.
-Calculate assignment average.
-Calculate scholarship percentage.
-Calculate scholarship amount.
-Calculate final payable fee.
-Calculate fee balance.
-Check final semester clearance.
-Display failed conditions.
-Display recommendations.
-Process another student using a do-while loop.
-4. Concepts Used
+Reads student ID, name, and age.
+Validates the student's age.
+Provides a course selection menu.
+Assigns the course and semester fee using switch.
+Accepts Java, SQL, and Aptitude marks.
+Validates all marks between 0 and 100.
+Calculates total marks and average.
+Determines whether the student passed all subjects.
+Assigns a grade using if-else-if.
+Validates attendance percentage.
+Determines attendance status using a ternary operator.
+Accepts the amount of semester fee paid.
+Calculates the remaining fee balance.
+Determines fee status using a ternary operator.
+Determines the final semester status.
+Displays individual reasons when the semester is not cleared.
+Concepts Used
+Java Concepts
 Java program structure
 Variables
 Primitive data types
 String
 Scanner
 Arithmetic operators
-Assignment operators
 Relational operators
 Logical operators
-Type casting
 if
 else if
 else
-Nested conditions
-Compound conditions
 switch
 Ternary operator
 while loop
-for loop
-do-while loop
-break
-continue
 print
 println
 printf
+Concepts Not Used
 
-No arrays, collections or user-defined methods are used.
+This project intentionally does not use:
 
-5. Input Details
-Input	Data Type	Validation
-Student ID	String	Required single word
-Full Name	String	Complete line
-Age	int	15 to 35
-Email	String	Single word
-Course Choice	int	1 to 5
-Semester	int	1 to 8
-Career Goal	String	Complete line
-Java Marks	int	0 to 100
-SQL Marks	int	0 to 100
-Web Technology Marks	int	0 to 100
-Aptitude Marks	int	0 to 100
-Communication Marks	int	0 to 100
-Total Classes	int	1 to 300
-Classes Attended	int	0 to total classes
-Number of Assignments	int	1 to 10
-Assignment Score	int	0 to 10 or -1
-Amount Paid	double	0 to final payable fee
-6. Validation Rules
-Age
+Arrays
+Collections
+User-defined methods
+Additional classes
+Constructors
+Exception handling
+File handling
+Database connectivity
+Inheritance
+Streams
+Lambda expressions
+GUI
+Web development
 
-Age must be between 15 and 35.
+The complete program is written inside the main method.
 
-If an invalid age is entered, the program asks again.
+Application Flow
+START
 
-Course
+Display CampusTrack heading
 
-The course choice must be between 1 and 5.
+Read Student ID
+Read Student Name
+Read and validate Age
 
-BCA
-B.Sc Computer Science
-B.E/B.Tech
-MCA
-Other
+Display Course Menu
+Read and validate Course Choice
+Use switch to assign Course and Semester Fee
 
-A switch statement is used to select the course and base semester fee.
+Read and validate Java Marks
+Read and validate SQL Marks
+Read and validate Aptitude Marks
 
-Semester
+Calculate Total Marks
+Calculate Average
 
-Semester must be between 1 and 8.
+Check individual subject results
+Determine Academic Result
+Determine Grade
 
-Subject Marks
+Read and validate Attendance
+Determine Attendance Status
 
-Every subject mark must be between 0 and 100.
+Read and validate Fee Paid
+Calculate Fee Balance
+Determine Fee Status
 
-Total Classes
+Determine Final Semester Status
 
-Total classes must be between 1 and 300.
+Display Complete Student Report
 
-Classes Attended
+Display Reasons if Semester is Not Cleared
 
-Classes attended cannot be greater than total classes.
+STOP
+Course Details
+Course Choice	Course	Semester Fee
+1	BCA	₹30,000
+2	B.Sc Computer Science	₹35,000
+3	B.E/B.Tech	₹50,000
+Academic Rules
+Subject Pass Mark
 
-Assignments
+Each subject requires a minimum of 35 marks.
 
-Number of assignments must be between 1 and 10.
-
-Assignment scores can be between 0 and 10.
-
-The value -1 is used to finish assignment entry early.
-
-Fee Payment
-
-Amount paid must be between 0 and the final payable fee.
-
-7. Academic Result Rules
-
-There are five subjects:
+The three subjects are:
 
 Java
 SQL
-Web Technology
 Aptitude
-Communication
 
-The minimum pass mark for every subject is 35.
+The student passes the academic requirement only when all three subjects have at least 35 marks.
 
-The student passes the academic criteria only when:
-
-Java is 35 or above
-SQL is 35 or above
-Web Technology is 35 or above
-Aptitude is 35 or above
-Communication is 35 or above
-Percentage is 40 or above
-Total Marks
-
-Total marks are calculated from all five subjects.
-
-Percentage
-
-Percentage is calculated from the total marks.
-
-Grade
+Java >= 35
+AND
+SQL >= 35
+AND
+Aptitude >= 35
+Grade System
 Condition	Grade
-Academic criteria failed	F
-Percentage >= 85	A+
-Percentage >= 75	A
-Percentage >= 65	B
-Percentage >= 50	C
-Percentage >= 40	D
+Any subject below 35	F
+Average >= 75	A
+Average >= 60	B
+Average >= 50	C
+Average < 50	D
 
-A student with a failed subject receives grade F even if the overall percentage is high.
+A failed subject always results in F, even if the overall average is high.
 
-8. Attendance Rules
+Attendance Rules
 
-The program collects:
+Attendance must be between 0 and 100.
 
-Total classes conducted
-Classes attended
-
-Attendance percentage is calculated using classes attended divided by total classes and multiplied by 100.
-
-The attendance criteria is passed when attendance is 75% or above.
+Attendance >= 75
 
 Attendance status:
 
-REGULAR when attendance is 75% or above
-SHORTAGE when attendance is below 75%
+SUFFICIENT
+SHORTAGE
 
-A ternary operator is used to determine the status.
+Attendance of exactly 75% is accepted.
 
-9. Assignment Rules
+Fee Rules
 
-The user can enter between 1 and 10 assignment scores.
+The fee paid must be:
 
-Each score must be between 0 and 10.
+0 or more
+AND
+not greater than the semester fee
 
-The value -1 means finish assignment entry early.
+Fee balance:
 
-break
-
-When -1 is entered, the assignment loop stops using break.
-
-continue
-
-When an invalid score such as 15 is entered, the entry is skipped using continue.
-
-Invalid scores do not affect the total or average.
-
-The assignment average is calculated using the total of valid assignment scores divided by the number of valid assignments.
-
-If no valid assignment is entered, the assignment average is 0.00.
-
-The assignment criteria is passed when:
-
-Valid assignment count is greater than 0
-Assignment average is 5 or above
-
-Assignment status:
-
-SATISFACTORY
-NEEDS IMPROVEMENT
-10. Scholarship and Fee Rules
-
-The scholarship depends on academic percentage and attendance.
-
-10% Scholarship
-
-The student receives a 10% scholarship when:
-
-Academic criteria is passed
-Percentage is 85 or above
-Attendance is 85 or above
-5% Scholarship
-
-The student receives a 5% scholarship when:
-
-Academic criteria is passed
-Percentage is 75 or above
-Attendance is 75 or above
-No Scholarship
-
-All other cases receive 0% scholarship.
-
-The 10% scholarship condition is checked first.
-
-Scholarship Amount
-
-Scholarship Amount = Base Fee × Scholarship Percentage / 100
-
-Final Payable Fee
-
-Final Payable Fee = Base Fee - Scholarship Amount
-
-Fee Balance
-
-Fee Balance = Final Payable Fee - Amount Paid
+Fee Balance = Semester Fee - Fee Paid
 
 Fee status:
 
-PAID when the balance is zero
-PENDING otherwise
-11. Final Clearance Rules
+Fee Balance == 0
+        |
+        YES → CLEARED
+        |
+        NO  → PENDING
+Final Semester Status
 
-The student is cleared for the next semester only when all four conditions are satisfied:
+The semester is cleared only when all three conditions are satisfied:
 
-Academic criteria passed
-Attendance is 75% or above
-Assignment criteria passed
-Fee balance is zero
-
-If all conditions are satisfied:
-
-CLEARED FOR NEXT SEMESTER
+Academic Result = PASSED
+AND
+Attendance >= 75
+AND
+Fee Balance = 0
 
 Otherwise:
 
-ACTION REQUIRED
+SEMESTER NOT CLEARED
+Validation
 
-The program checks academic performance, attendance, assignments and fees independently.
+The application validates the following inputs using while loops.
 
-12. How to Run
-Step 1: Open the Project
+Age
 
-Open the Third-PRD folder in VS Code.
+Valid range:
 
-Step 2: Open Terminal
+16 to 30
+Course Choice
 
-Open the VS Code terminal.
+Valid choices:
 
-Step 3: Compile the Program
+1 to 3
+Subject Marks
 
-Run:
+Valid range:
 
-javac Main.java
-Step 4: Run the Program
+0 to 100
+Attendance
 
-Run:
+Valid range:
 
-java Main
- Test Cases
-Test Case 1 — All Conditions Passed
+0 to 100
+Fee Paid
 
-Expected results:
+Valid when:
 
-Academic Result: PASSED
-Grade: A
-Attendance Status: REGULAR
-Assignment Status: SATISFACTORY
-Fee Status: PAID
-Semester Clearance: CLEARED FOR NEXT SEMESTER
-Test Case 2 — Subject Failed
+0 <= Fee Paid <= Semester Fee
+Expected Report
+==================================================
+              STUDENT SEMESTER REPORT
+==================================================
+Student ID          :
+Student Name        :
+Age                 :
+Course              :
 
-Marks:
+--------------- ACADEMIC DETAILS -----------------
+Java Marks          :
+SQL Marks           :
+Aptitude Marks      :
+Total Marks         :
+Average             :
+Academic Result     :
+Grade               :
 
-Java: 90
-SQL: 90
-Web Technology: 90
-Aptitude: 30
-Communication: 90
+--------------- ATTENDANCE DETAILS ---------------
+Attendance          :
+Attendance Status   :
 
-Expected:
+------------------ FEE DETAILS --------------------
+Semester Fee        :
+Fee Paid            :
+Fee Balance         :
+Fee Status          :
 
-Total Marks: 390/500
-Percentage: 78.00%
-Academic Result: FAILED
-Grade: F
-Semester Clearance: ACTION REQUIRED
+---------------- FINAL STATUS ---------------------
+Semester Status     :
 
-Failed condition:
+Reasons:
+...
+==================================================
 
-Aptitude marks are below 35.
-Test Case 3 — Boundary Values
+The Reasons section is displayed only when the semester is not cleared.
 
-Input:
+Sample Run
+Input
+Enter student ID: STU101
+Enter student name: Ananya Rao
+Enter age: 20
 
-All subject marks: 40
-Classes conducted: 100
-Classes attended: 75
-Assignment scores: 5, 5, 5
+Select Course
+1. BCA
+2. B.Sc Computer Science
+3. B.E/B.Tech
 
-Expected:
+Enter course choice: 3
+Enter Java marks: 78
+Enter SQL marks: 72
+Enter Aptitude marks: 65
+Enter attendance percentage: 82
+Enter fee paid: 50000
+Output
+==================================================
+              STUDENT SEMESTER REPORT
+==================================================
+Student ID          : STU101
+Student Name        : Ananya Rao
+Age                 : 20
+Course              : B.E/B.Tech
 
-Percentage: 40.00%
-Academic Result: PASSED
-Grade: D
-Attendance Percentage: 75.00%
-Attendance Status: REGULAR
-Assignment Average: 5.00
-Assignment Status: SATISFACTORY
-Semester Clearance: CLEARED FOR NEXT SEMESTER
-Test Case 4 — Attendance Shortage and Pending Fee
+--------------- ACADEMIC DETAILS -----------------
+Java Marks          : 78
+SQL Marks           : 72
+Aptitude Marks      : 65
+Total Marks         : 215/300
+Average             : 71.67
+Academic Result     : PASSED
+Grade               : B
 
-Input:
+--------------- ATTENDANCE DETAILS ---------------
+Attendance          : 82.00%
+Attendance Status   : SUFFICIENT
 
-Classes conducted: 100
-Classes attended: 70
-Assignment scores: 7, 7, 7
-Amount paid: 20000
+------------------ FEE DETAILS --------------------
+Semester Fee        : ₹50000.00
+Fee Paid            : ₹50000.00
+Fee Balance         : ₹0.00
+Fee Status          : CLEARED
 
-Expected:
-
-Attendance Percentage: 70.00%
-Attendance Status: SHORTAGE
-Fee Status: PENDING
-Semester Clearance: ACTION REQUIRED
-
-Failed conditions:
-
-Attendance is below 75%.
-Semester fee is pending.
-Test Case 5 — continue and break
-
-Assignment input:
-
-5
-8
-15
-6
--1
-
-Expected:
-
-Valid Assignments: 3
-Assignment Total: 19
-Assignment Average: 6.33
-Assignment Status: SATISFACTORY
-
-The score 15 is skipped using continue.
-
-The score -1 stops the loop using break.
-
-Test Case 6 — No Valid Assignment
-
-Assignment input:
-
-3
-15
-12
--1
-
-Expected:
-
-Valid Assignments: 1
-Assignment Total: 3
-Assignment Average: 3.00
-Assignment Status: NEEDS IMPROVEMENT
-Semester Clearance: ACTION REQUIRED
-Test Case 7 — Ten Percent Scholarship
-
-Use:
-Course: MCA
-Percentage: 88.80%
-Attendance: 90.00%
-Base Fee: ₹45000
+---------------- FINAL STATUS ---------------------
+Semester Status     : SEMESTER CLEARED
+==================================================
+Test Cases
+Test Case 1: All Conditions Passed
+Java Marks     : 78
+SQL Marks      : 72
+Aptitude Marks : 65
+Attendance     : 82%
+Fee Paid       : ₹50000
 
 Expected:
 
-Scholarship Percentage: 10%
-Scholarship Amount: ₹4500.00
-Final Payable Fee: ₹40500.00
-Test Case 8 — Invalid Input Re-entry
+Academic Result     : PASSED
+Grade               : B
+Attendance Status   : SUFFICIENT
+Fee Status          : CLEARED
+Semester Status     : SEMESTER CLEARED
+Test Case 2: One Subject Failed
+Java Marks     : 90
+SQL Marks      : 30
+Aptitude Marks : 90
+Attendance     : 85%
+Fee Balance    : ₹0
 
-The program should correctly handle:
+Expected:
 
-Invalid age followed by a valid age
-Invalid course followed by a valid course
-Invalid marks followed by valid marks
-Invalid total classes followed by valid total classes
-Classes attended greater than total classes followed by valid attendance
-14. Project Structure
+Academic Result     : FAILED
+Grade               : F
+Semester Status     : SEMESTER NOT CLEARED
 
+Reasons:
+- SQL marks are below 35.
+Test Case 3: Boundary Values
+Java Marks     : 35
+SQL Marks      : 35
+Aptitude Marks : 35
+Attendance     : 75%
+Fee Balance    : ₹0
+
+Expected:
+
+Average             : 35.00
+Academic Result     : PASSED
+Grade               : D
+Attendance Status   : SUFFICIENT
+Fee Status          : CLEARED
+Semester Status     : SEMESTER CLEARED
+Test Case 4: Attendance Shortage and Pending Fee
+Java Marks     : 70
+SQL Marks      : 68
+Aptitude Marks : 72
+Attendance     : 70%
+Semester Fee   : ₹30000
+Fee Paid       : ₹20000
+
+Expected:
+
+Academic Result     : PASSED
+Attendance Status   : SHORTAGE
+Fee Balance         : ₹10000.00
+Fee Status          : PENDING
+Semester Status     : SEMESTER NOT CLEARED
+
+Reasons:
+- Attendance is below 75%.
+- Semester fee is pending.
+Test Case 5: Invalid Input Validation
+Enter age: 12
+Invalid age. Enter a value between 16 and 30.
+Enter age: 20
+
+Enter course choice: 7
+Invalid course choice. Enter a value from 1 to 3.
+Enter course choice: 1
+
+Enter Java marks: 110
+Invalid marks. Enter a value between 0 and 100.
+Enter Java marks: 75
+
+Enter attendance percentage: -10
+Invalid attendance. Enter a value between 0 and 100.
+Enter attendance percentage: 80
+Pseudocode
+
+The project pseudocode is available in:
+
+pseudocode/pseudocode.txt
+
+It describes the complete application flow before implementation.
+
+Repository Structure
 Third-PRD/
+│
+├── README.md
+│
+├── src/
+│   └── Main.java
+│
+├── pseudocode/
+│   └── pseudocode.txt
+│
+└── output/
+    ├── semester-cleared-output-01.png
+    ├── semester-cleared-output-02.png
+    ├── semester-cleared-output-03.png
+    └── semester-cleared-output-04.png
 
-Main.java
-README.md
-output/
-    sample-output.txt
-15. Sample Output
+    Output Screenshots
 
-STUDENT SEMESTER REPORT
+The output folder contains screenshots of the Java console execution and demonstrates the program's final results.
 
-Student ID : STU101
-Student Name : Ananya Rao
-Age : 20
-Email : ananya@gmail.com
-Course : B.E/B.Tech
-Semester : 4
-Career Goal : Become a Java backend developer
+Technical Note
 
-ACADEMIC SUMMARY
+The JDK is used to develop and compile the Java program. The Java compiler converts the Java source code into bytecode. The JVM executes the bytecode, allowing Java programs to run on different operating systems that have a compatible JVM.
 
-Java Marks : 88
-SQL Marks : 82
-Web Technology Marks : 79
-Aptitude Marks : 76
-Communication Marks : 80
-Total Marks : 405/500
-Percentage : 81.00%
-Academic Result : PASSED
-Grade : A
+Learning Outcomes
 
-ATTENDANCE SUMMARY
+After completing this project, the learner should be able to:
 
-Classes Conducted : 120
-Classes Attended : 102
-Attendance Percentage : 85.00%
-Attendance Status : REGULAR
+Use Java variables and data types.
+Read runtime input using Scanner.
+Apply arithmetic, relational, and logical operators.
+Use if-else-if conditions.
+Use switch statements.
+Validate user input using while loops.
+Use ternary operators.
+Perform calculations using Java.
+Format console output using printf.
+Build a complete beginner-level Java console application.
+Conclusion
 
-ASSIGNMENT SUMMARY
+CampusTrack demonstrates how fundamental Java concepts can be combined to create a practical console-based Student Result Management System.
 
-Valid Assignments : 5
-Assignment Total : 41
-Assignment Average : 8.20
-Assignment Status : SATISFACTORY
+The project provides hands-on practice with input handling, validation, conditional statements, switch, loops, arithmetic calculations, ternary operators, and formatted output.
 
-FEE SUMMARY
-
-Base Semester Fee : ₹50000.00
-Scholarship Percentage : 5%
-Scholarship Amount : ₹2500.00
-Final Payable Fee : ₹47500.00
-Amount Paid : ₹47500.00
-Fee Balance : ₹0.00
-Fee Status : PAID
-
-FINAL STATUS
-
-Semester Clearance : CLEARED FOR NEXT SEMESTER
-
-FAILED CONDITIONS
-
-None
-
-RECOMMENDATIONS
-
-Maintain the current performance in the next semester.
-
-
-CampusTrack demonstrates the use of core Java programming concepts to solve a real-world student academic management problem.
-
-The project uses runtime input, validation, calculations, conditions, loops, switch, ternary operators, break and continue.
-
-It generates a complete semester report and determines whether the student is cleared for the next semester.
+By completing this project, the learner gains experience in converting a set of functional requirements into a working Java application while maintaining clear program flow and readable output.
